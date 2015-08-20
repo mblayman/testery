@@ -13,3 +13,4 @@ testery documentation
    infrastructure
    frontend
    backend
+   models

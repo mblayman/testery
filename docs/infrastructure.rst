@@ -11,7 +11,7 @@ Development
 The environment should work on a Vagrant setup
 that launches at least a couple of VMs.
 
-One VM should be a database VM. That's it. PostreSQL.
+One VM should be a database VM. That's it. PostgreSQL.
 
 Another VM should have the app server.
 
