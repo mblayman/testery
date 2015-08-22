@@ -21,6 +21,15 @@ and client side rendering is a dream
 or a very hamstrung reality
 if I used just the right subset of templating languages.
 
+Marshalling/Serialization
+-------------------------
+
+I don't think it truly matters,
+but since marshalling seems to be about moving objects,
+I'll use a marshaller to wrap responses with metadata
+and I will use serializers to do the conversion
+between model and JSON.
+
 Phase 0
 -------
 
