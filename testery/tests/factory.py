@@ -8,3 +8,6 @@ class Factory(object):
     def make_req(self):
         env = testing.create_environ()
         return falcon.Request(env)
+
+    def make_resp(self):
+        return falcon.Response()
