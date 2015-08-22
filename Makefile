@@ -1,2 +1,3 @@
 serve:
-	gunicorn testery.server
+	gunicorn testery.server \
+	--access-logfile -
