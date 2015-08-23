@@ -1,3 +1,4 @@
 Cython==0.23
 falcon==0.3.0
 PasteDeploy==1.5.2
+SQLAlchemy==1.0.8
