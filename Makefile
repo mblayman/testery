@@ -1,3 +1,2 @@
 serve:
-	gunicorn testery.server \
-	--access-logfile -
+	gunicorn --paste development.ini
