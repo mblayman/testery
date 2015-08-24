@@ -1,11 +1,16 @@
 import unittest
 
+from .. import db
 from .factory import Factory
 
 
 class TestCase(unittest.TestCase):
     """Base TestCase for testery"""
 
-    def __init__(self, methodName='runTest'):
-        super(TestCase, self).__init__(methodName)
+    def setUp(self):
         self.factory = Factory()
+        self.session = db.Session()
+
+    def tearDown(self):
+        self.session.rollback()
+        db.Session.remove()
