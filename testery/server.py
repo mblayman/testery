@@ -1,7 +1,7 @@
 import falcon
 import sqlalchemy
 
-from testery import db
+from testery import db, request
 from testery.resources import build
 
 
@@ -24,8 +24,7 @@ def configure_db(settings):
 
 
 def make_api():
-    api = falcon.API()
-    # TODO: use custom request
+    api = falcon.API(request_type=request.Request)
     # TODO: use middleware
     return api
 
