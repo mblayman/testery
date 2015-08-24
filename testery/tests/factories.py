@@ -1,7 +1,15 @@
+import factory
+import factory.alchemy
 import falcon
 from falcon import testing
 
-from testery import db, request
+from testery import db, models, request
+
+
+class BuildFactory(factory.alchemy.SQLAlchemyModelFactory):
+    class Meta:
+        model = models.Build
+        sqlalchemy_session = db.Session
 
 
 class Factory(object):
@@ -15,3 +23,6 @@ class Factory(object):
 
     def make_resp(self):
         return falcon.Response()
+
+    def make_build(self, **kwargs):
+        return BuildFactory.create(**kwargs)
