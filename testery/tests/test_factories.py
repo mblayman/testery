@@ -2,7 +2,7 @@ import falcon
 from sqlalchemy.orm import session
 
 from testery.tests import TestCase
-from testery.tests.factory import Factory
+from testery.tests.factories import Factory
 
 
 class TestFactory(TestCase):

@@ -1,7 +1,7 @@
 import unittest
 
 from .. import db
-from .factory import Factory
+from .factories import Factory
 
 
 class TestCase(unittest.TestCase):
