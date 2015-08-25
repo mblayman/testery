@@ -1,3 +1,4 @@
+import logging
 import os
 
 from paste.deploy.loadwsgi import appconfig
@@ -11,6 +12,9 @@ def setup():
 
     main does the db configuration. Then the tables need to be created.
     """
+    # Hush factory boy.
+    logging.getLogger('factory').setLevel(logging.WARN)
+
     here = os.path.dirname(__file__)
     ini_path = os.path.abspath(os.path.join(here, '..', '..', 'test.ini'))
     settings = appconfig('config:' + ini_path)
