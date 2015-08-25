@@ -3,3 +3,6 @@ serve:
 
 cover:
 	nosetests --with-coverage --cover-package=testery
+
+initdb:
+	python -m testery.scripts.initializedb
