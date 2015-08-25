@@ -10,4 +10,4 @@ class SessionMiddleware(object):
 
     def process_response(self, req, resp, resource):
         """Tear down the session."""
-        req.context['session'].remove()
+        db.Session.remove()
