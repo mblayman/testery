@@ -13,6 +13,9 @@ class BuildCollection(object):
         builds = req.session.query(Build).all()
         marshalled = {'builds': []}
         for build in builds:
-            marshalled['builds'].append({'id': build.id})
+            marshalled['builds'].append({
+                'id': build.id,
+                'passes': build.passes,
+            })
         resp.body = json.dumps(marshalled)
         resp.status = falcon.HTTP_200

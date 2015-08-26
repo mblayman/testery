@@ -8,3 +8,4 @@ class Build(Base):
     __tablename__ = 'builds'
 
     id = sa.Column(sa.Integer, primary_key=True)
+    passes = sa.Column(sa.Integer, default=0)
