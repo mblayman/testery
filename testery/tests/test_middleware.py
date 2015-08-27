@@ -10,7 +10,7 @@ class TestJSONSerializerMiddleware(TestCase):
 
     def test_serializes_to_json(self):
         req = self.factory.make_req()
-        req.context['result'] = {'hello': 'world'}
+        req.context['marshalled'] = {'hello': 'world'}
         resp = self.factory.make_resp()
         resource = mock.Mock()
         middleware = JSONSerializerMiddleware()

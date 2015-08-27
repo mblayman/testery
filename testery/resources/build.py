@@ -18,5 +18,5 @@ class BuildCollection(object):
                 'passes': build.passes,
                 'fails': build.fails,
             })
-        req.context['result'] = marshalled
+        req.context['marshalled'] = marshalled
         resp.status = falcon.HTTP_200

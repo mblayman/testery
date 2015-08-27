@@ -4,10 +4,10 @@ from testery import db
 
 
 class JSONSerializerMiddleware(object):
-    """A middleware to transform a dict result into JSON."""
+    """A middleware to transform a marshalled dict into JSON."""
 
     def process_response(self, req, resp, resource):
-        resp.body = json.dumps(req.context['result'], separators=(',', ':'))
+        resp.body = json.dumps(req.context['marshalled'], separators=(',', ':'))
 
 class SessionMiddleware(object):
     """A middleware that attaches scoped sessions to requests."""
