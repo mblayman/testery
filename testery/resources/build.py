@@ -16,6 +16,7 @@ class BuildCollection(object):
             marshalled['builds'].append({
                 'id': build.id,
                 'passes': build.passes,
+                'fails': build.fails,
             })
         resp.body = json.dumps(marshalled)
         resp.status = falcon.HTTP_200

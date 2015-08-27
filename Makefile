@@ -4,5 +4,6 @@ serve:
 cover:
 	nosetests --with-coverage --cover-package=testery
 
-initdb:
+db:
+	rm -f db.sqlite
 	python -m testery.scripts.initializedb
