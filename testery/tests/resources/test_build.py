@@ -38,4 +38,4 @@ class TestBuildCollection(TestCase):
                 'fails': 0,
             }]
         }
-        self.assertEqual(expected, json.loads(resp.body))
+        self.assertEqual(expected, req.context['result'])

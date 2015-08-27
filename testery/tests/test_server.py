@@ -16,6 +16,6 @@ class TestServer(TestCase):
 
     def test_has_json_serializer_middleware(self):
         api = server.make_api()
-        process_req, _, process_resp = api._middleware[1]
+        _, _, process_resp = api._middleware[1]
         self.assertEqual(
             middleware.JSONSerializerMiddleware, process_resp.im_class)
