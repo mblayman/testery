@@ -26,6 +26,7 @@ def configure_db(settings):
 def make_api():
     api = falcon.API(request_type=request.Request, middleware=[
         middleware.SessionMiddleware(),
+        middleware.JSONSerializerMiddleware(),
     ])
     return api
 

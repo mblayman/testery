@@ -11,5 +11,11 @@ class TestServer(TestCase):
     def test_has_session_middleware(self):
         api = server.make_api()
         process_req, _, process_resp = api._middleware[0]
-        self.assertTrue(middleware.SessionMiddleware, process_req.__class__)
-        self.assertTrue(middleware.SessionMiddleware, process_resp.__class__)
+        self.assertEqual(middleware.SessionMiddleware, process_req.im_class)
+        self.assertEqual(middleware.SessionMiddleware, process_resp.im_class)
+
+    def test_has_json_serializer_middleware(self):
+        api = server.make_api()
+        process_req, _, process_resp = api._middleware[1]
+        self.assertEqual(
+            middleware.JSONSerializerMiddleware, process_resp.im_class)
