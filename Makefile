@@ -1,5 +1,5 @@
 serve:
-	gunicorn --paste development.ini
+	gunicorn --paste development.ini --reload
 
 cover:
 	nosetests --with-coverage --cover-package=testery

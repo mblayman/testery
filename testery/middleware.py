@@ -1,3 +1,4 @@
+import falcon
 import json
 
 from testery import db
@@ -7,7 +8,10 @@ class JSONSerializerMiddleware(object):
     """A middleware to transform a marshalled dict into JSON."""
 
     def process_response(self, req, resp, resource):
+        if resp.status == falcon.HTTP_NOT_FOUND:
+            return
         resp.body = json.dumps(req.context['marshalled'], separators=(',', ':'))
+
 
 class SessionMiddleware(object):
     """A middleware that attaches scoped sessions to requests."""

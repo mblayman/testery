@@ -1,3 +1,4 @@
+import falcon
 import mock
 from sqlalchemy.orm import session
 
@@ -16,6 +17,17 @@ class TestJSONSerializerMiddleware(TestCase):
         middleware = JSONSerializerMiddleware()
         middleware.process_response(req, resp, resource)
         self.assertEqual('{"hello":"world"}', resp.body)
+
+    @mock.patch('testery.middleware.json')
+    def test_do_not_serialize_404(self, json):
+        req = self.factory.make_req()
+        resp = self.factory.make_resp()
+        resp.status = falcon.HTTP_NOT_FOUND
+        resource = mock.Mock()
+        middleware = JSONSerializerMiddleware()
+        middleware.process_response(req, resp, resource)
+        self.assertFalse(json.dumps.called)
+
 
 class TestSessionMiddleware(TestCase):
 
