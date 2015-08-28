@@ -18,9 +18,9 @@ def main():
     models.Base.metadata.create_all()
 
     session = db.Session()
-    session.add(models.Build(passes=42, fails=4))
-    session.add(models.Build(passes=52, fails=2))
-    session.add(models.Build(passes=62, fails=1))
+    session.add(models.Build(passes=42, fails=4, skips=1))
+    session.add(models.Build(passes=52, fails=2, skips=2))
+    session.add(models.Build(passes=62, fails=1, skips=3))
     session.commit()
 
 

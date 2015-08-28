@@ -10,3 +10,4 @@ class Build(Base):
     id = sa.Column(sa.Integer, primary_key=True)
     passes = sa.Column(sa.Integer, default=0)
     fails = sa.Column(sa.Integer, default=0)
+    skips = sa.Column(sa.Integer, default=0)
