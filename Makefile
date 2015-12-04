@@ -1,6 +1,9 @@
 serve:
 	gunicorn --paste development.ini --reload
 
+ember:
+	cd client; ember serve
+
 cover:
 	nosetests --with-coverage --cover-package=testery
 
