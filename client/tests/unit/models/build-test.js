@@ -7,6 +7,10 @@ moduleForModel('build', 'Unit | Model | build', {
 
 test('it exists', function(assert) {
   var model = this.subject();
-  // var store = this.store();
   assert.ok(!!model);
+});
+
+test('it has passes', function(assert) {
+  var model = this.subject();
+  assert.equal(model.get('passes'), 0);
 });
